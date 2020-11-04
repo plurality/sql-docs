@@ -115,7 +115,7 @@ ALTER INDEX { index_name | ALL } ON <object>
 <reorganize_option>::=  
 {  
        LOB_COMPACTION = { ON | OFF }  
-    |  COMPRESS_ALL_ROW_GROUPS =  { ON | OFF}  
+    |  COMPRESS_ALL_ROW_GROUPS =  { ON | OFF }  
 }  
   
 <set_index_option>::=  
@@ -740,7 +740,7 @@ The following functionality is disabled for resumable index rebuild operations
 ## Spatial Index Restrictions  
  When you rebuild a spatial index, the underlying user table is unavailable for the duration of the index operation because the spatial index holds a schema lock.  
   
- The PRIMARY KEY constraint in the user table cannot be modified while a spatial index is defined on a column of that table. To change the PRIMARY KEY constraint, first drop every spatial index of the table. After modifying the PRIMARY KEy constraint, you can re-create each of the spatial indexes.  
+ The PRIMARY KEY constraint in the user table cannot be modified while a spatial index is defined on a column of that table. To change the PRIMARY KEY constraint, first drop every spatial index of the table. After modifying the PRIMARY KEY constraint, you can re-create each of the spatial indexes.  
   
  In a single partition rebuild operation, you cannot specify any spatial indexes. However, you can specify spatial indexes in a complete partition rebuild.  
   
