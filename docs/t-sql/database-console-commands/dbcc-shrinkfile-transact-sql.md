@@ -137,7 +137,7 @@ If the file size doesn't change after an error-less shrink operation, try the fo
 - Run the following query.  
   
 ```sql
-SELECT name ,size/128.0 - CAST(FILEPROPERTY(name, 'SpaceUsed') AS int)/128.0 AS AvailableSpaceInMB
+SELECT name, size/128.0 - CAST(FILEPROPERTY(name, 'SpaceUsed') AS int)/128.0 AS AvailableSpaceInMB
 FROM sys.database_files;
 ```
 
