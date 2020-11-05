@@ -123,7 +123,7 @@ Everyone can see their own session information.
  The following example finds the users that are connected to the server and returns the number of sessions for each user.  
   
 ```sql  
-SELECT login_name ,COUNT(session_id) AS session_count   
+SELECT login_name,COUNT(session_id) AS session_count   
 FROM sys.dm_exec_sessions   
 GROUP BY login_name;  
 ```  
@@ -134,8 +134,8 @@ GROUP BY login_name;
 ```sql  
 USE master;  
 GO  
-SELECT creation_time ,cursor_id   
-    ,name ,c.session_id ,login_name   
+SELECT creation_time, cursor_id, 
+  name, c.session_id, login_name   
 FROM sys.dm_exec_cursors(0) AS c   
 JOIN sys.dm_exec_sessions AS s   
    ON c.session_id = s.session_id   
